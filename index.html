@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Felix Isaakyan — Head of Data &amp; AI</title>
+<meta name="description" content="Head of Data &amp; AI. Eight years in production machine learning: self-hosted LLM platforms, recommender systems, fraud ML, data platform architecture. Remote from Yerevan, UTC+4.">
+<meta name="author" content="Felix Isaakyan">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Felix Isaakyan — Head of Data &amp; AI">
+<meta property="og:description" content="I build AI platforms and the teams that run them. 100+ source systems in, 30 models in production, 5M users served.">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#E7E7E1;
+    --panel:#F3F3EF;
+    --ink:#14161A;
+    --ink-2:#575C63;
+    --ink-3:#8B9098;
+    --rule:#C7C7BF;
+    --spot:#8A1F1A;
+
+    --sans:"Archivo", "Helvetica Neue", Arial, sans-serif;
+    --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+    --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    --measure:64ch;
+    --rail:9.5rem;
+    --gap:2.25rem;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#131417;
+      --panel:#1A1C20;
+      --ink:#E9E9E4;
+      --ink-2:#9CA2A9;
+      --ink-3:#71777E;
+      --rule:#2E3138;
+      --spot:#E0665B;
+    }
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:16px;
+    line-height:1.58;
+    font-variant-numeric:tabular-nums;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:60rem;
+    margin:0 auto;
+    padding:clamp(2rem,6vw,4.5rem) clamp(1.15rem,5vw,3rem) 5rem;
+  }
+
+  a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);transition:border-color .15s,color .15s}
+  a:hover{color:var(--spot);border-bottom-color:var(--spot)}
+  a:focus-visible{outline:2px solid var(--spot);outline-offset:3px;border-radius:2px}
+
+  /* ---------- masthead ---------- */
+
+  .masthead{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:1.5rem;
+    margin-bottom:2.25rem;
+  }
+
+  .name{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:clamp(2.35rem,8.5vw,4.35rem);
+    line-height:.94;
+    letter-spacing:-.035em;
+    text-transform:uppercase;
+    margin:0 0 .85rem;
+  }
+
+  .role{
+    font-family:var(--mono);
+    font-size:.72rem;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--spot);
+    margin:0 0 1.6rem;
+  }
+
+  .thesis{
+    font-family:var(--serif);
+    font-size:clamp(1.18rem,2.6vw,1.5rem);
+    line-height:1.35;
+    max-width:34ch;
+    margin:0 0 1.9rem;
+    text-wrap:balance;
+  }
+
+  /* ---------- signature: the throughput line ---------- */
+
+  .flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:stretch;
+    gap:0;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    margin:0 0 1.9rem;
+  }
+  .flow-node{
+    flex:1 1 8.5rem;
+    padding:.85rem 1.15rem .9rem 0;
+    position:relative;
+    opacity:0;
+    animation:rise .5s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+  .flow-node:nth-child(1){animation-delay:.05s}
+  .flow-node:nth-child(2){animation-delay:.15s}
+  .flow-node:nth-child(3){animation-delay:.25s}
+  .flow-node:nth-child(4){animation-delay:.35s}
+
+  .flow-node::after{
+    content:"→";
+    position:absolute;
+    right:.55rem;
+    top:50%;
+    transform:translateY(-50%);
+    font-family:var(--mono);
+    color:var(--spot);
+    font-size:.85rem;
+  }
+  .flow-node:last-child::after{content:none}
+
+  .flow-val{
+    display:block;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:1.32rem;
+    letter-spacing:-.02em;
+    line-height:1.1;
+  }
+  .flow-lab{
+    display:block;
+    font-family:var(--mono);
+    font-size:.63rem;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-top:.3rem;
+  }
+
+  @keyframes rise{
+    from{opacity:0;transform:translateY(6px)}
+    to{opacity:1;transform:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .flow-node{animation:none;opacity:1}
+  }
+
+  /* ---------- contact ---------- */
+
+  .contact{
+    font-family:var(--mono);
+    font-size:.775rem;
+    line-height:2;
+    color:var(--ink-2);
+    display:flex;
+    flex-wrap:wrap;
+    gap:0 1.35rem;
+  }
+  .contact a{border-bottom-color:var(--ink-3)}
+
+  .avail{
+    font-family:var(--mono);
+    font-size:.75rem;
+    line-height:1.6;
+    color:var(--ink-2);
+    margin-top:1.1rem;
+    padding-left:.85rem;
+    border-left:2px solid var(--spot);
+  }
+
+  /* ---------- sections ---------- */
+
+  .sec{margin-top:3.4rem}
+
+  .sec-head{
+    font-family:var(--mono);
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+    margin:0 0 1.5rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--ink);
+  }
+
+  /* ---------- prose ---------- */
+
+  p{margin:0 0 1rem;max-width:var(--measure)}
+  p:last-child{margin-bottom:0}
+  .lede{font-size:1.045rem}
+
+  strong{font-weight:600}
+  em{font-style:italic;color:var(--ink-2)}
+
+  /* ---------- employer + roles ---------- */
+
+  .employer{margin-bottom:2.9rem}
+  .employer:last-child{margin-bottom:0}
+
+  .employer-head{margin-bottom:1.5rem}
+
+  .employer-name{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:1.42rem;
+    letter-spacing:-.02em;
+    margin:0 0 .3rem;
+    line-height:1.2;
+  }
+  .employer-note{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--ink-2);
+    font-size:.95rem;
+    margin:0 0 .35rem;
+    max-width:var(--measure);
+  }
+  .employer-span{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+
+  .role-block{
+    display:grid;
+    grid-template-columns:var(--rail) 1fr;
+    gap:0 var(--gap);
+    padding-top:1.5rem;
+    border-top:1px solid var(--rule);
+    margin-top:1.5rem;
+  }
+  .role-block:first-of-type{margin-top:0}
+
+  .role-when{
+    font-family:var(--mono);
+    font-size:.7rem;
+    line-height:1.65;
+    letter-spacing:.04em;
+    color:var(--ink-3);
+    padding-top:.3rem;
+  }
+
+  .role-title{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:1.03rem;
+    letter-spacing:-.005em;
+    margin:0 0 .75rem;
+  }
+
+  /* ---------- lists ---------- */
+
+  ul{list-style:none;margin:0 0 1rem;padding:0;max-width:var(--measure)}
+  ul:last-child{margin-bottom:0}
+  li{position:relative;padding-left:1.15rem;margin-bottom:.55rem}
+  li:last-child{margin-bottom:0}
+  li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.72em;
+    width:.5rem;
+    height:1px;
+    background:var(--spot);
+  }
+
+  /* ---------- labelled sub-block ---------- */
+
+  .unit{
+    margin:0 0 1.25rem;
+    max-width:var(--measure);
+  }
+  .unit-label{
+    display:block;
+    font-family:var(--mono);
+    font-size:.665rem;
+    font-weight:500;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--spot);
+    margin-bottom:.5rem;
+  }
+
+  /* ---------- stack table ---------- */
+
+  .stack{
+    display:grid;
+    grid-template-columns:var(--rail) 1fr;
+    gap:.9rem var(--gap);
+    align-items:baseline;
+  }
+  .stack dt{
+    font-family:var(--mono);
+    font-size:.68rem;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+  .stack dd{
+    margin:0;
+    font-family:var(--mono);
+    font-size:.815rem;
+    line-height:1.75;
+    color:var(--ink);
+  }
+
+  /* ---------- footer ---------- */
+
+  .foot{
+    margin-top:4rem;
+    padding-top:1.25rem;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.06em;
+    color:var(--ink-3);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:.5rem 1.5rem;
+  }
+
+  /* ---------- narrow ---------- */
+
+  @media (max-width:640px){
+    .role-block,.stack{grid-template-columns:1fr;gap:0}
+    .role-when{padding-top:0;margin-bottom:.55rem}
+    .stack dt{margin-top:.9rem}
+    .stack dd{margin-bottom:.2rem}
+    .flow-node{flex:1 1 100%;padding-right:0;border-bottom:1px solid var(--rule)}
+    .flow-node:last-child{border-bottom:none}
+    .flow-node::after{content:"↓";right:auto;left:0;top:auto;bottom:-.62rem;transform:none;background:var(--paper);padding:0 .25rem 0 0}
+  }
+
+  /* ---------- print ---------- */
+
+  @media print{
+    :root{
+      --paper:#fff;--panel:#fff;--ink:#000;--ink-2:#333;--ink-3:#555;
+      --rule:#bbb;--spot:#000;
+    }
+    body{font-size:9.6pt;line-height:1.42}
+    .wrap{max-width:none;padding:0}
+    .name{font-size:26pt}
+    .thesis{font-size:11pt}
+    a{border-bottom:none}
+    .flow-node{animation:none;opacity:1}
+    .sec{margin-top:1.5rem}
+    .employer,.role-block,.unit,li{break-inside:avoid;page-break-inside:avoid}
+    .sec-head{break-after:avoid;page-break-after:avoid}
+    .foot{display:none}
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <h1 class="name">Felix<br>Isaakyan</h1>
+  <p class="role">Head of Data &amp; AI</p>
+
+  <p class="thesis">I build AI platforms and the teams that run them.</p>
+
+  <div class="flow" role="img" aria-label="100 plus source systems feed the data platform, which carries 30 models in production, reaching 5 million monthly users.">
+    <div class="flow-node"><span class="flow-val">100+</span><span class="flow-lab">source systems</span></div>
+    <div class="flow-node"><span class="flow-val">Platform</span><span class="flow-lab">built in house</span></div>
+    <div class="flow-node"><span class="flow-val">30</span><span class="flow-lab">models in production</span></div>
+    <div class="flow-node"><span class="flow-val">5M</span><span class="flow-lab">users reached monthly</span></div>
+  </div>
+
+  <div class="contact">
+    <span>Yerevan, Armenia · UTC+4</span>
+    <a href="mailto:felix.isaakyan@gmail.com">felix.isaakyan@gmail.com</a>
+    <a href="https://www.linkedin.com/in/felixisaakyan">linkedin.com/in/felixisaakyan</a>
+  </div>
+
+  <p class="avail">Open to remote roles.</p>
+</header>
+
+<section class="sec" aria-labelledby="s-summary">
+  <h2 class="sec-head" id="s-summary">Summary</h2>
+  <p class="lede">Eight years in production machine learning, currently running a 20-person data and AI function at a $3B retailer. Promoted twice in three years and still technical: I own the architecture of both platforms, sit in design reviews, and write code on the parts that matter. The last year went mostly into a self-hosted corporate LLM platform, built on vLLM and H100s with agentic RAG and a real authorisation model. Alongside it, 30 ML models in production and over 100 source systems integrated. I've led the team remotely and asynchronously the whole time.</p>
+  <p class="lede">I'm looking for hands-on scope, either leading a small team or a senior IC role. Systems over headcount.</p>
+  <p><strong>Depth in:</strong> LLM platforms and agentic RAG · recommender systems and personalization · demand forecasting · fraud and risk ML · data platform architecture · MLOps · experimentation</p>
+</section>
+
+<section class="sec" aria-labelledby="s-experience">
+  <h2 class="sec-head" id="s-experience">Experience</h2>
+
+  <!-- ============ DETMIR ============ -->
+  <article class="employer">
+    <div class="employer-head">
+      <h3 class="employer-name">Detmir Group</h3>
+      <p class="employer-note">Largest children's goods retailer in the CIS. ~1,900 stores, ~$3B annual revenue. Yerevan, remote.</p>
+      <p class="employer-span">Jun 2023 – Present · promoted twice</p>
+    </div>
+
+    <div class="role-block">
+      <div class="role-when">Apr 2025<br>– Present</div>
+      <div>
+        <h4 class="role-title">Head of Data &amp; AI</h4>
+
+        <p>Run a 20-person function: 8 data scientists, 8 data engineers, 4 analysts, 1 platform engineer. Took it over at 10 and hired 15 people since; all four leads were grown internally rather than hired in. Report to the CTO, work directly with the CEO and CFO on data strategy. The team is fully distributed and I've run it remotely since 2023.</p>
+
+        <div class="unit">
+          <span class="unit-label">Corporate AI platform</span>
+          <p>Built a self-hosted LLM gateway that anyone in the company can use:</p>
+          <ul>
+            <li>OpenAI-compatible gateway API in front of <strong>vLLM on H100s</strong></li>
+            <li><strong>Agentic RAG</strong> over Jira, Confluence, ClickHouse and user-uploaded documents</li>
+            <li><strong>RBAC</strong> plus resource-level policies</li>
+            <li><strong>Langfuse</strong> tracing end to end, quotas and billing per API key</li>
+            <li>Access paths: OpenWebUI, REST</li>
+          </ul>
+        </div>
+
+        <div class="unit">
+          <span class="unit-label">Data platform</span>
+          <p>Owned end to end and built in house: Iceberg lakehouse, ClickHouse serving layer, a <strong>50-node Hadoop cluster</strong>, Airflow, dbt, NiFi ingestion, Superset, Keycloak SSO, Jupyter and Zeppelin. <strong>Over 100 source systems</strong> connected, mostly SAP HANA, Hadoop, ClickHouse and Postgres.</p>
+        </div>
+
+        <div class="unit">
+          <span class="unit-label">ML platform</span>
+          <p>Built on MLflow: model registry, automated retraining, drift and quality monitoring. It carries <strong>30 models in production</strong>. Personalization and recommendations reach <strong>5M monthly and 1M daily users</strong>. Prototype to production went from a quarter down to a few weeks.</p>
+        </div>
+
+        <div class="unit">
+          <span class="unit-label">Governance</span>
+          <p>Ran the programme that came out of the group IT audit: catalog structure and population, end-to-end lineage, business glossary, and data architecture written into the company's corporate architecture. Data quality controls and a platform health dashboard sit on the 2027 roadmap.</p>
+        </div>
+
+        <p>Also shipped the Metrics Factory, a single certified metric layer now used by product, commercial and finance, and the experimentation stack on GrowthBook.</p>
+
+        <p>Contributed to <strong>+3% revenue</strong> through personalization and promo ML, measured on holdout A/B tests. Doubled promo campaign throughput by automating targeting and launch.</p>
+      </div>
+    </div>
+
+    <div class="role-block">
+      <div class="role-when">Sep 2023<br>– Apr 2025</div>
+      <div>
+        <h4 class="role-title">Head of Data Science and Machine Learning</h4>
+        <ul>
+          <li>Inherited a 10-person function doing mostly ad-hoc analysis and turned it into one that ships models.</li>
+          <li>Designed and built the personalization and recommendation stack, now at <strong>5M monthly users</strong>. It is the largest single source of ML-driven revenue in the company.</li>
+          <li>Put in the engineering foundations the team still runs on: MLOps pipeline, code review, model design review, experiment tracking, and a shared framework that cut build time per model.</li>
+          <li>Made A/B testing the default standard of proof for ML work. Before that it was before-and-after comparisons.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role-block">
+      <div class="role-when">Jun 2023<br>– Sep 2023</div>
+      <div>
+        <h4 class="role-title">Senior Data Scientist</h4>
+        <ul>
+          <li>Joined as an IC, moved into leading the team four months later.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ GROVER ============ -->
+  <article class="employer">
+    <div class="employer-head">
+      <h3 class="employer-name">Grover</h3>
+      <p class="employer-note">Consumer-tech scale-up. Berlin, Germany.</p>
+    </div>
+
+    <div class="role-block">
+      <div class="role-when">Jul 2022<br>– Jan 2023</div>
+      <div>
+        <h4 class="role-title">Data Scientist</h4>
+        <ul>
+          <li>Shipped two ML models to MVP and refactored one existing production model.</li>
+          <li>Cut build time per model across the team by standardising on a shared internal framework.</li>
+          <li>Made production models more stable through systematic decision-threshold analysis.</li>
+          <li><em>Role eliminated in the January 2023 company-wide layoffs.</em></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ SBER ============ -->
+  <article class="employer">
+    <div class="employer-head">
+      <h3 class="employer-name">Sber</h3>
+      <p class="employer-note">Largest bank in Eastern Europe. 100M+ retail customers. Moscow.</p>
+    </div>
+
+    <div class="role-block">
+      <div class="role-when">Nov 2017<br>– Jul 2022</div>
+      <div>
+        <h4 class="role-title">Senior Data Scientist</h4>
+        <ul>
+          <li>Built fraud detection for corporate transactions end to end: <strong>40% fewer false positives at constant recall</strong>, <strong>9% higher detection accuracy</strong> on the same holdout.</li>
+          <li>Owned the whole lifecycle. Fraud pattern analysis, feature engineering, training and validation, deployment, monitoring.</li>
+          <li>Turned business objectives into technical requirements and advised business units directly on what was and wasn't feasible with ML.</li>
+          <li>Mentored junior data scientists and ran code review for the team.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="sec" aria-labelledby="s-technical">
+  <h2 class="sec-head" id="s-technical">Technical</h2>
+  <dl class="stack">
+    <dt>Languages</dt>
+    <dd>Python · SQL · Rust</dd>
+
+    <dt>LLM / AI</dt>
+    <dd>vLLM · agentic RAG · MCP · Langfuse · OpenWebUI · RBAC and resource policies · LLM evals</dd>
+
+    <dt>ML</dt>
+    <dd>Recommender systems · personalization · demand forecasting · fraud and risk ML · gradient boosting · deep learning · A/B testing and causal inference</dd>
+
+    <dt>ML platform</dt>
+    <dd>MLflow · automated retraining · drift and quality monitoring · GrowthBook</dd>
+
+    <dt>Data</dt>
+    <dd>Apache Iceberg · ClickHouse · Hadoop · Spark · PostgreSQL · SAP HANA · dbt · Airflow · NiFi</dd>
+
+    <dt>Infra</dt>
+    <dd>GitLab CI/CD · Keycloak · H100 GPU serving</dd>
+
+    <dt>Analysis &amp; BI</dt>
+    <dd>Superset · Jupyter · Zeppelin</dd>
+
+    <dt>Governance</dt>
+    <dd>Data catalog · lineage · business glossary · data architecture · data quality</dd>
+  </dl>
+</section>
+
+<section class="sec" aria-labelledby="s-education">
+  <h2 class="sec-head" id="s-education">Education</h2>
+  <div class="role-block" style="border-top:none;padding-top:0;margin-top:0">
+    <div class="role-when">MSc</div>
+    <div>
+      <h4 class="role-title">Computer Science — HSE University</h4>
+      <p><em>Done while working full time.</em></p>
+    </div>
+  </div>
+  <div class="role-block">
+    <div class="role-when">MSc</div>
+    <div>
+      <h4 class="role-title">Nuclear and Particle Physics — MEPhI</h4>
+      <p><em>National Research Nuclear University.</em></p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <span>Russian (native) · English (full professional)</span>
+  <span>felix.isaakyan@gmail.com</span>
+</footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Felix Isaakyan",
+  "jobTitle": "Head of Data & AI",
+  "email": "mailto:felix.isaakyan@gmail.com",
+  "address": {"@type": "PostalAddress", "addressLocality": "Yerevan", "addressCountry": "AM"},
+  "sameAs": ["https://www.linkedin.com/in/felixisaakyan", "https://github.com/isfelix"],
+  "worksFor": {"@type": "Organization", "name": "Detmir Group"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "HSE University"},
+    {"@type": "CollegeOrUniversity", "name": "National Research Nuclear University MEPhI"}
+  ],
+  "knowsLanguage": ["ru", "en"],
+  "knowsAbout": ["Machine Learning", "Large Language Models", "vLLM", "Retrieval-Augmented Generation", "Recommender Systems", "Fraud Detection", "MLOps", "Data Platform Architecture", "Apache Iceberg", "ClickHouse", "Python"]
+}
+</script>
+</body>
+</html>
