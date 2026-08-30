@@ -8,7 +8,7 @@
 <meta name="author" content="Felix Isaakyan">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Felix Isaakyan — Head of Data &amp; AI">
-<meta property="og:description" content="I build AI platforms and the teams that run them. 100+ source systems in, 30 models in production, 5M users served.">
+<meta property="og:description" content="I build AI platforms and the teams that run them. 100+ source systems in, 30+ models in production, 5M users served.">
 <meta name="twitter:card" content="summary">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,14 +47,14 @@ a:focus-visible{outline:2px solid var(--ref);outline-offset:3px}
 
 /* ---- title block ---- */
 .title-block{text-align:center;margin-bottom:2.6rem}
-.preprint-tag{
-  font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--ink-3);margin:0 0 1.6rem;
-}
+/* centred lines must not inherit the prose measure: `ch` resolves against each
+   element's own font size, so every line would centre inside a different-width
+   box and the block would go ragged and shift on resize */
+.title-block p{max-width:none;margin-left:auto;margin-right:auto}
 h1.title{
   font-family:var(--serif);font-weight:600;
   font-size:clamp(2.1rem,6vw,3rem);line-height:1.08;letter-spacing:-.015em;
-  margin:0 0 .55rem;
+  margin:0 0 .55rem;text-wrap:balance;
 }
 .subtitle{
   font-family:var(--serif);font-style:italic;font-size:1.2rem;
@@ -62,7 +62,7 @@ h1.title{
 }
 .byline{
   font-family:var(--mono);font-size:.775rem;line-height:1.95;color:var(--ink-2);
-  margin:0;
+  margin:0;overflow-wrap:anywhere;
 }
 .byline a{border-bottom-color:transparent}
 .byline a:hover{border-bottom-color:var(--ref)}
@@ -81,7 +81,7 @@ h1.title{
 
 .keywords{
   font-family:var(--mono);font-size:.735rem;line-height:1.85;color:var(--ink-2);
-  margin:0 0 3.2rem;
+  margin:0 0 3.2rem;max-width:none;
 }
 .keywords b{font-family:var(--mono);font-weight:500;color:var(--ink);letter-spacing:.1em;text-transform:uppercase;font-size:.66rem}
 
@@ -178,7 +178,6 @@ dl.stack dd{margin:0;font-family:var(--mono);font-size:.775rem;line-height:1.75}
 <main class="sheet">
 
   <div class="title-block">
-    <p class="preprint-tag">Curriculum Vitae · Revised August 2026</p>
     <h1 class="title">Felix Isaakyan</h1>
     <p class="subtitle">Head of Data &amp; AI</p>
     <p class="byline">
@@ -190,7 +189,7 @@ dl.stack dd{margin:0;font-family:var(--mono);font-size:.775rem;line-height:1.75}
 
   <div class="abstract">
     <span class="abstract-label">Abstract</span>
-    <p>Eight years in production machine learning, currently running a 20-person data and AI function at a $3B retailer. Promoted twice in three years and still technical: I own the architecture of both platforms, sit in design reviews, and write code on the parts that matter. The last year went mostly into a self-hosted corporate LLM platform, built on vLLM and H100s with agentic RAG and a real authorisation model. Alongside it, 30 ML models in production and over 100 source systems integrated. I've led the team remotely and asynchronously the whole time.</p>
+    <p>Eight years in production machine learning, currently running a 20-person data and AI function at a $3B retailer. Promoted twice in three years and still technical: I own the architecture of both platforms, sit in design reviews, and write code on the parts that matter. The last year went mostly into a self-hosted corporate LLM platform, built on vLLM and H100s with agentic RAG and a real authorisation model. Alongside it, 30+ ML models in production and over 100 source systems integrated. I've led the team remotely and asynchronously the whole time.</p>
     <p>I'm looking for hands-on scope, either leading a small team or a senior IC role. Systems over headcount.</p>
   </div>
 
@@ -203,9 +202,9 @@ dl.stack dd{margin:0;font-family:var(--mono);font-size:.775rem;line-height:1.75}
         <tr><th scope="col">Quantity</th><th scope="col">Value</th></tr>
       </thead>
       <tbody>
-        <tr><td>Team under management</td><td class="q">20 — 8 DS, 8 DE, 4 DA, 1 platform</td></tr>
+        <tr><td>Team under management</td><td class="q">20 — 8 DS, 8 DE, 4 DA, 1 DevOps</td></tr>
         <tr><td>Hired into the team</td><td class="q">15 of 20; all 4 leads grown internally</td></tr>
-        <tr><td>ML models in production</td><td class="q">30</td></tr>
+        <tr><td>ML models in production</td><td class="q">30+</td></tr>
         <tr><td>Source systems integrated</td><td class="q">100+</td></tr>
         <tr><td>Hadoop cluster</td><td class="q">50 nodes</td></tr>
         <tr><td>Users reached by personalization</td><td class="q">5M monthly / 1M daily</td></tr>
@@ -226,7 +225,7 @@ dl.stack dd{margin:0;font-family:var(--mono);font-size:.775rem;line-height:1.75}
 
       <h3 class="sub" style="margin-top:1.2rem"><span class="num">1.1.1</span>Head of Data &amp; AI</h3>
       <p class="dates">Apr 2025 – Present</p>
-      <p>Run a 20-person function: 8 data scientists, 8 data engineers, 4 analysts, 1 platform engineer. Took it over at 10 and hired 15 people since; all four leads were grown internally rather than hired in. Report to the CTO, work directly with the CEO and CFO on data strategy. The team is fully distributed and I've run it remotely since 2023.</p>
+      <p>Run a 20-person function: 8 data scientists, 8 data engineers, 4 analysts, 1 DevOps engineer. Took it over at 10 and hired 15 people since; all four leads were grown internally rather than hired in. Report to the CTO, work directly with the CEO and CFO on data strategy. The team is fully distributed and I've run it remotely since 2023.</p>
 
       <p><span class="para-label">Corporate AI platform.</span> Built a self-hosted LLM gateway that anyone in the company can use:</p>
       <ul>
@@ -239,7 +238,7 @@ dl.stack dd{margin:0;font-family:var(--mono);font-size:.775rem;line-height:1.75}
 
       <p><span class="para-label">Data platform.</span> Owned end to end and built in house: Iceberg lakehouse, ClickHouse serving layer, a <strong>50-node Hadoop cluster</strong>, Airflow, dbt, NiFi ingestion, Superset, Keycloak SSO, Jupyter and Zeppelin. <strong>Over 100 source systems</strong> connected, mostly SAP HANA, Hadoop, ClickHouse and Postgres.</p>
 
-      <p><span class="para-label">ML platform.</span> Built on MLflow: model registry, automated retraining, drift and quality monitoring. It carries <strong>30 models in production</strong>. Personalization and recommendations reach <strong>5M monthly and 1M daily users</strong>. Prototype to production went from a quarter down to a few weeks.</p>
+      <p><span class="para-label">ML platform.</span> Built on MLflow: model registry, automated retraining, drift and quality monitoring. It carries <strong>30+ models in production</strong>. Personalization and recommendations reach <strong>5M monthly and 1M daily users</strong>. Prototype to production went from a quarter down to a few weeks.</p>
 
       <p><span class="para-label">Governance.</span> Ran the programme that came out of the group IT audit: catalog structure and population, end-to-end lineage, business glossary, and data architecture written into the company's corporate architecture. Data quality controls and a platform health dashboard sit on the 2027 roadmap.</p>
 
